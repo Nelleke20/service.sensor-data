@@ -66,3 +66,4 @@ if __name__ == "__main__":
         add_data(pi_temperature, house_temperature, house_humidity)
     except sqlite3.OperationalError:
         initiate_table()
+        add_data(pi_temperature, house_temperature, house_humidity)
