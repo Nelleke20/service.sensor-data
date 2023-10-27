@@ -11,7 +11,7 @@ The goal of this project was to analyze the temperature and humidity in house wi
 #### Starting date
 Dec 28, 2021 backend
 
-Jan 3, 2021 frontend
+Jan 3, 2022 frontend
 
 #### Context
 We have some discussions at home about the temperature and humidity in house. To end the discussion ones and for all (😉) I decided to built my own sensor-pi combination and  store the data in database. Storing the history enabled me to retrieve the data and show a trendline over the past days on a webpage:
