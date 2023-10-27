@@ -3,9 +3,9 @@ The goal of this project was to analyze the temperature and humidity in house wi
 
 #### Design / setup of the project:
 
-<!-- <p align="center" width="100%">
+<p align="center" width="100%">
     <img width="75%" src="img/setup.png">
-</p> -->
+</p>
 
 
 #### Starting date
