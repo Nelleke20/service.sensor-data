@@ -26,7 +26,7 @@ def initiate_table():
                                     temp_pi NUMERIC,
                                     temp_house NUMERIC,
                                     hum_house NUMERIC)"""
-    )  # noqa: E501
+    )
 
 
 def recreate_table():
@@ -36,14 +36,14 @@ def recreate_table():
                                     temp_pi NUMERIC,
                                     temp_house NUMERIC,
                                     hum_house NUMERIC)"""
-    )  # noqa: E501
+    )
 
 
 def add_data(temp_pi, temp_house, hum_house):
     curs.execute(
         "INSERT INTO DHT_data values(datetime('now'), (?), (?), (?))",
         (temp_pi, temp_house, hum_house),
-    )  # noqa: E501
+    )
     conn.commit()
     conn.close()
 
