@@ -21,12 +21,11 @@ Dec 28, 2021 backend
 Jan 3, 2021 frontend
 
 #### Context
-We have some discussions at home about the temperature and humidity in house. To end the discussino ones and for all (😉) I decided to built my own sensor-pi combination and  store the data in database. Store the history enabled me to retrieve the data and show a trendline over the past days.
-
+We have some discussions at home about the temperature and humidity in house. To end the discussino ones and for all (😉) I decided to built my own sensor-pi combination and  store the data in database. Storing the history enabled me to retrieve the data and show a trendline over the past days on a webpage:
 
 <p align="center" width="100%">
     <img width="75%" src="img/website.png">
 </p>
 
 #### Tech and Tools
-Flask API, DHT sensor, sqllite,
+Raspberry Pi, Flask API, DHT sensor, sqllite,
