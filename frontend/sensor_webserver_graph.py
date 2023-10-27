@@ -10,7 +10,7 @@ import datetime as dt
 
 
 def sql_extract_sensor_dataframe():
-    conn = sqlite3.connect("../sensor-temperature-air-cron-job/sensorsData.db")
+    conn = sqlite3.connect("../backend/src/sensorsData.db")
     df = pd.read_sql_query("SELECT * FROM DHT_data", conn)
     # df_100 = df.tail(50)
     last_row = df.iloc[-1:]
@@ -52,7 +52,7 @@ def plot_temp():
     axis.set_xlabel("Samples")
     axis.grid(True)
     axis.set_ylim([10, 30])
-    axis.set_xlim([dt.date(2022, month, 1), dt.date(2022, month, tomorrow)])
+    axis.set_xlim([dt.date(2023, month, 1), dt.date(2023, month, tomorrow)])
     axis.plot(x, y)
     axis.tick_params(axis="x", rotation=30)
     canvas = FigureCanvas(fig)
@@ -78,7 +78,7 @@ def plot_hum():
     axis.set_xlabel("Samples")
     axis.grid(True)
     axis.set_ylim([20, 80])
-    axis.set_xlim([dt.date(2022, month, 1), dt.date(2022, month, tomorrow)])
+    axis.set_xlim([dt.date(2023, month, 1), dt.date(2023, month, tomorrow)])
     axis.plot(x, y)
     axis.tick_params(axis="x", rotation=30)
     canvas = FigureCanvas(fig)
