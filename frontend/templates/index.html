@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+   <head>
+      <title>DHT Sensor data </title>
+      <link rel="stylesheet" href='../static/style.css'/>
+   </head>
+   <body>
+	<h1>DHT Sensor Data </h1>
+	<h3> TEMPERATURE   ==>  {{ temp_home  }} oC</h3>
+	<h3> HUMIDITY (Rel.) ==>  {{ lucht_home  }} %</h3>
+	<hr>
+	<h3> Last Sensors Reading: {{ timestamp }} ==> <a href="/"class="button">REFRESH</a></h3>
+	<hr>
+	<img src="/temp" alt="Image Placeholder" width="49%">
+	<img src="/hum" alt="Image Placeholder" width="49%">
+   </body>
+</html>
