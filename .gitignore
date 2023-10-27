@@ -1,2 +1,28 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+frontend/__pycache__/
+
+# Distribution / packaging
+Adafruit_Python_DHT
+
+# Flask stuff:
+instance/
+.webassets-cache
+*.txt
+*.db
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+src/old/
 venv
+
+# data folder
 data
