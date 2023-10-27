@@ -1,11 +1,3 @@
-# service.sensor-data
-Analyse and display sensory data of house temperature and humidity
-
-
-## to do:
-create readme
-create drawio
-
 ### Introduction
 The goal of this project was to analyze the temperature and humidity in house with a simple sensor and store this in a database. In addition an API was created which was called and then displayed the results on a webpage.
 
