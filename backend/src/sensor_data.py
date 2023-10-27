@@ -1,8 +1,7 @@
 from gpiozero import CPUTemperature
 import sqlite3
 from datetime import datetime
-
-# import Adafruit_DHT as ada
+import Adafruit_DHT as ada
 
 
 def get_sensor_data():
@@ -14,9 +13,9 @@ def get_sensor_data():
 
 
 def get_sensor_data_dummy():
-    pi_temperature = 80
-    house_humidity = 30
-    house_temperature = 20
+    pi_temperature = 30
+    house_humidity = 76
+    house_temperature = 24
     return pi_temperature, house_humidity, house_temperature
 
 
@@ -41,7 +40,7 @@ def recreate_table():
 
 def add_data(temp_pi, temp_house, hum_house):
     curs.execute(
-        "INSERT INTO DHT_data values(datetime('now'), (?), (?), (?))",
+        "INSERT INTO DHT_data values(datetime('now', '+4 days'), (?), (?), (?))",  # noqa: E501
         (temp_pi, temp_house, hum_house),
     )
     conn.commit()
