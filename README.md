@@ -3,15 +3,15 @@ The goal of this project was to analyze the temperature and humidity in house wi
 
 #### Design / setup of the project:
 
-<p align="center" width="100%">
-    <img width="75%" src="img/setup.png">
+<p align="center" width="80%">
+    <img width="50%" src="img/setup.png">
 </p>
 
 
 #### Starting date
-Dec 28, 2021 backend
+Dec 28, 2021 backend (old repository)
 
-Jan 3, 2022 frontend
+Jan 3, 2022 frontend (old repository)
 
 #### Context
 We have some discussions at home about the temperature and humidity in house. To end the discussion ones and for all (😉) I decided to built my own sensor-pi combination and  store the data in database. Storing the history enabled me to retrieve the data and show a trendline over the past days on a webpage:
