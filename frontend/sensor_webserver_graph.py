@@ -46,12 +46,13 @@ def plot_temp():
     tomorrow = today + 1
     y = df["temp_house"]
     x = df["time"]
-    fig = Figure()
+    fig = Figure(figsize=(10, 8))
     axis = fig.add_subplot(1, 1, 1)
     axis.set_title("Temperature [°C]")
-    axis.set_xlabel("Samples")
+    axis.set_xlabel("Datum van de meeting")
+    axis.set_ylabel("Temperatuur in Celcius")
     axis.grid(True)
-    axis.set_ylim([10, 30])
+    axis.set_ylim([10, 40])
     axis.set_xlim([dt.date(2023, month, 1), dt.date(2023, month, tomorrow)])
     axis.plot(x, y)
     axis.tick_params(axis="x", rotation=30)
@@ -72,12 +73,13 @@ def plot_hum():
     tomorrow = today + 1
     x = df["time"]
     y = df["hum_house"]
-    fig = Figure()
+    fig = Figure(figsize=(10, 8))
     axis = fig.add_subplot(1, 1, 1)
     axis.set_title("Humidity [%]")
-    axis.set_xlabel("Samples")
+    axis.set_xlabel("Datum van de meeting")
+    axis.set_ylabel("Luchtvochtigheid")
     axis.grid(True)
-    axis.set_ylim([20, 80])
+    axis.set_ylim([20, 90])
     axis.set_xlim([dt.date(2023, month, 1), dt.date(2023, month, tomorrow)])
     axis.plot(x, y)
     axis.tick_params(axis="x", rotation=30)
