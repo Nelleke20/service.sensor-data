@@ -1,14 +1,14 @@
 from gpiozero import CPUTemperature
 import sqlite3
 from datetime import datetime
-import Adafruit_DHT as ada
-
+import board
+import adafruit_dht
 
 def get_sensor_data():
+    dhtDevice = adafruit_dht.DHT22(board.D4)
     pi_temperature = round(CPUTemperature().temperature, 2)
-    house_hum, house_temperature = ada.read_retry(ada.DHT22, 4)  # noqa:F821
-    house_humidity = round(house_hum, 2)
-    house_temperature = round(house_temperature, 2)
+    house_temperature = round(dhtDevice.temperature, 2)
+    house_humidity = round(dhtDevice.humidity, 2)   
     return pi_temperature, house_humidity, house_temperature
 
 
@@ -40,7 +40,7 @@ def recreate_table():
 
 def add_data(temp_pi, temp_house, hum_house):
     curs.execute(
-        "INSERT INTO DHT_data values(datetime('now', '+4 days'), (?), (?), (?))",  # noqa: E501
+        "INSERT INTO DHT_data values(datetime('now'), (?), (?), (?))",  # noqa: E501
         (temp_pi, temp_house, hum_house),
     )
     conn.commit()
@@ -49,7 +49,7 @@ def add_data(temp_pi, temp_house, hum_house):
 
 if __name__ == "__main__":
     # create database table
-    conn = sqlite3.connect("sensorsData.db")
+    conn = sqlite3.connect("sensorData.db")
     curs = conn.cursor()
     today = int(datetime.today().strftime("%d"))
     if today == 1:  # only create table every first of the month
@@ -60,7 +60,7 @@ if __name__ == "__main__":
         pi_temperature,
         house_humidity,
         house_temperature,
-    ) = get_sensor_data_dummy()  # test with dummy
+    ) = get_sensor_data()  # test with dummy by using function with dummy 
     try:
         add_data(pi_temperature, house_temperature, house_humidity)
     except sqlite3.OperationalError:

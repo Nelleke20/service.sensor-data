@@ -10,15 +10,13 @@ import datetime as dt
 
 
 def sql_extract_sensor_dataframe():
-    conn = sqlite3.connect("../backend/src/sensorsData.db")
+    conn = sqlite3.connect("../backend/sensorData.db")
     df = pd.read_sql_query("SELECT * FROM DHT_data", conn)
-    # df_100 = df.tail(50)
     last_row = df.iloc[-1:]
     return df, last_row
 
 
 app = Flask(__name__)
-
 
 @app.route("/")
 def homepage():
@@ -54,7 +52,7 @@ def plot_temp():
     axis.grid(True)
     axis.set_ylim([10, 40])
     axis.set_xlim([dt.date(2023, month, 1), dt.date(2023, month, tomorrow)])
-    axis.plot(x, y)
+    axis.plot(x, y, marker="x")
     axis.tick_params(axis="x", rotation=30)
     canvas = FigureCanvas(fig)
     output = io.BytesIO()
@@ -81,7 +79,7 @@ def plot_hum():
     axis.grid(True)
     axis.set_ylim([20, 90])
     axis.set_xlim([dt.date(2023, month, 1), dt.date(2023, month, tomorrow)])
-    axis.plot(x, y)
+    axis.plot(x, y, marker="x")
     axis.tick_params(axis="x", rotation=30)
     canvas = FigureCanvas(fig)
     output = io.BytesIO()
