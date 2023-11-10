@@ -1,5 +1,5 @@
 #! /bin/bash
-cd /Users/nellekesmits/Documents/projects/service.sensor-data/frontend/
+cd /home/pi/Documents/service.sensor-data/frontend/
 
 source ../venv/bin/activate
 export FLASK_APP=sensor_webserver_graph.py
