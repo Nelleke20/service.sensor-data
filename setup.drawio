@@ -1,58 +1,76 @@
 <mxfile host="65bd71144e">
     <diagram id="djTwBXkwdc9C2080poBp" name="Page-1">
-        <mxGraphModel dx="601" dy="403" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="0" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="none" math="0" shadow="0">
+        <mxGraphModel dx="968" dy="869" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="0" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="none" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
                 <mxCell id="21" value="&lt;b&gt;sensor_data.py&lt;/b&gt;&lt;br&gt;Haalt de kamertemperatuur en luchtvochtigheid op middels de sensor die gekoppeld is aan de raspberry Pi" style="rounded=0;whiteSpace=wrap;html=1;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Helvetica;fontSize=12;fillColor=#e3c800;strokeColor=#B09500;fontColor=#000000;gradientColor=#FFFFFF;" parent="1" vertex="1">
-                    <mxGeometry x="340" y="162" width="198" height="79" as="geometry"/>
+                    <mxGeometry x="283" y="112" width="138" height="129" as="geometry"/>
                 </mxCell>
                 <mxCell id="22" value="" style="endArrow=classic;html=1;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fontSize=12;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.852;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="21" target="23" edge="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
-                        <mxPoint x="410" y="347" as="sourcePoint"/>
-                        <mxPoint x="239" y="289" as="targetPoint"/>
+                        <mxPoint x="353" y="347" as="sourcePoint"/>
+                        <mxPoint x="182" y="289" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="23" value="sensorsData.db" style="shape=dataStorage;whiteSpace=wrap;html=1;fixedSize=1;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Helvetica;fontSize=12;fillColor=#bac8d3;strokeColor=#23445d;fontStyle=1;gradientColor=#FAFAFA;" parent="1" vertex="1">
-                    <mxGeometry x="94" y="249" width="144.5" height="80" as="geometry"/>
+                <mxCell id="23" value="sensorData.db" style="shape=dataStorage;whiteSpace=wrap;html=1;fixedSize=1;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Helvetica;fontSize=12;fillColor=#bac8d3;strokeColor=#23445d;fontStyle=1;gradientColor=#FAFAFA;" parent="1" vertex="1">
+                    <mxGeometry x="37" y="249" width="144.5" height="80" as="geometry"/>
                 </mxCell>
                 <mxCell id="25" value="" style="shape=sumEllipse;perimeter=ellipsePerimeter;whiteSpace=wrap;html=1;backgroundOutline=1;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Helvetica;fontSize=12;fillColor=#fa6800;strokeColor=#C73500;fontColor=#000000;gradientColor=#FAFAFA;" parent="1" vertex="1">
-                    <mxGeometry x="180" y="109" width="47" height="40" as="geometry"/>
+                    <mxGeometry x="123" y="109" width="47" height="40" as="geometry"/>
                 </mxCell>
                 <mxCell id="26" value="Raspberry Pi with DHT sensor" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Helvetica;fontSize=12;fontStyle=1" parent="1" vertex="1">
-                    <mxGeometry x="163.5" y="166" width="80" height="30" as="geometry"/>
+                    <mxGeometry x="106.5" y="166" width="80" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="27" value="" style="endArrow=classic;html=1;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fontSize=12;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="25" target="21" edge="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
-                        <mxPoint x="375" y="335" as="sourcePoint"/>
-                        <mxPoint x="335" y="190" as="targetPoint"/>
+                        <mxPoint x="318" y="335" as="sourcePoint"/>
+                        <mxPoint x="278" y="190" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="28" value="" style="endArrow=classic;html=1;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fontSize=12;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.854;exitY=0.473;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="23" target="29" edge="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
-                        <mxPoint x="375" y="335" as="sourcePoint"/>
-                        <mxPoint x="336" y="343" as="targetPoint"/>
+                        <mxPoint x="318" y="335" as="sourcePoint"/>
+                        <mxPoint x="279" y="343" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="29" value="&lt;b&gt;Flask API&amp;nbsp;&lt;/b&gt;&lt;br&gt;sensor_webserver_graph.py zorgt er voor dat de data uit de database (per maand) wordt opgehaald en gevisualiseerd." style="rounded=0;whiteSpace=wrap;html=1;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Helvetica;fontSize=12;fillColor=#e3c800;strokeColor=#B09500;fontColor=#000000;gradientColor=#ffffff;" parent="1" vertex="1">
-                    <mxGeometry x="338" y="309" width="196" height="79" as="geometry"/>
+                    <mxGeometry x="281" y="356" width="273" height="79" as="geometry"/>
                 </mxCell>
                 <mxCell id="30" value="Website" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Helvetica;fontSize=12;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;gradientColor=#FCFCFC;" parent="1" vertex="1">
-                    <mxGeometry x="399" y="456" width="80" height="100" as="geometry"/>
+                    <mxGeometry x="377.5" y="515" width="80" height="100" as="geometry"/>
                 </mxCell>
                 <mxCell id="31" value="" style="endArrow=classic;html=1;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fontSize=12;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="29" target="30" edge="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
-                        <mxPoint x="375" y="328" as="sourcePoint"/>
-                        <mxPoint x="430" y="450" as="targetPoint"/>
+                        <mxPoint x="318" y="328" as="sourcePoint"/>
+                        <mxPoint x="373" y="450" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="32" value="&lt;font style=&quot;font-size: 12px;&quot;&gt;html template&lt;/font&gt;" style="shape=card;whiteSpace=wrap;html=1;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Helvetica;fontSize=20;fillColor=#bac8d3;strokeColor=#23445d;fontStyle=1;gradientColor=#FAFAFA;" parent="1" vertex="1">
-                    <mxGeometry x="582" y="308" width="97" height="80" as="geometry"/>
+                <mxCell id="32" value="&lt;font style=&quot;font-size: 12px;&quot;&gt;html template&lt;/font&gt;" style="shape=card;whiteSpace=wrap;html=1;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Helvetica;fontSize=20;fillColor=#0050ef;strokeColor=#001DBC;fontStyle=1;fontColor=#ffffff;gradientColor=default;" parent="1" vertex="1">
+                    <mxGeometry x="680" y="356" width="97" height="80" as="geometry"/>
                 </mxCell>
-                <mxCell id="33" value="" style="endArrow=classic;html=1;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fontSize=12;exitX=0.003;exitY=0.495;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.003;entryY=0.495;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="32" edge="1">
+                <mxCell id="33" value="" style="endArrow=classic;html=1;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fontSize=12;exitX=0.003;exitY=0.495;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="32" edge="1" target="29">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
                         <mxPoint x="584" y="348" as="sourcePoint"/>
-                        <mxPoint x="534.0030000000003" y="348" as="targetPoint"/>
+                        <mxPoint x="620" y="385" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="34" value="&lt;b&gt;knmi_data.py&lt;/b&gt;&lt;br&gt;Haalt de temperatuur op bij het KNMI weerstation van de bilt (260)&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Helvetica;fontSize=12;fillColor=#e3c800;strokeColor=#B09500;fontColor=#000000;gradientColor=#FFFFFF;" vertex="1" parent="1">
+                    <mxGeometry x="440" y="109" width="128" height="134" as="geometry"/>
+                </mxCell>
+                <mxCell id="35" value="knmiData.db" style="shape=dataStorage;whiteSpace=wrap;html=1;fixedSize=1;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Helvetica;fontSize=12;fillColor=#bac8d3;strokeColor=#23445d;fontStyle=1;gradientColor=#FAFAFA;flipH=1;" vertex="1" parent="1">
+                    <mxGeometry x="651" y="241" width="144.5" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="36" value="" style="endArrow=classic;html=1;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fontSize=12;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="34">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="350" y="186.5" as="sourcePoint"/>
+                        <mxPoint x="676" y="281" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="37" value="" style="endArrow=classic;html=1;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fontSize=12;exitX=0.854;exitY=0.473;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="674.903" y="281.00000000000006" as="sourcePoint"/>
+                        <mxPoint x="557" y="394" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
             </root>
