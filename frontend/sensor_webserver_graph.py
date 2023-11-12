@@ -5,6 +5,8 @@ import sqlite3
 import pandas as pd
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 from matplotlib.figure import Figure
+import matplotlib.dates as mdates
+import matplotlib.pyplot as plt
 import io
 import datetime as dt
 
@@ -15,6 +17,16 @@ def sql_extract_sensor_dataframe():
     last_row = df.iloc[-1:]
     return df, last_row
 
+def sql_extract_knmi_dataframe():
+    conn = sqlite3.connect("../backend/knmiData.db")
+    dfknmi = pd.read_sql_query("SELECT * FROM KNMI_data", conn)
+    return dfknmi    
+
+def create_results_dataframe(df, dfknmi):
+    df['key'] = pd.to_datetime(df['timestamp']).dt.strftime("%d%H")
+    dfknmi['key'] = pd.to_datetime(dfknmi['timestamp_h']).dt.strftime("%d%H")
+    result = df.merge(dfknmi, left_on='key', right_on='key', how='left')
+    return result
 
 app = Flask(__name__)
 
@@ -38,22 +50,28 @@ def homepage():
 @app.route("/temp")
 def plot_temp():
     df, last_row = sql_extract_sensor_dataframe()
-    df["time"] = pd.to_datetime(df["timestamp"])
+    dfknmi = sql_extract_knmi_dataframe()
+    result = create_results_dataframe(df, dfknmi)
+    result["time"] = pd.to_datetime(result["timestamp"])
     today = pd.Timestamp.today().day
     month = pd.Timestamp.today().month
     tomorrow = today + 1
-    y = df["temp_house"]
-    x = df["time"]
+    y1 = result["temp_house"]
+    y2 = result["hum_house"]
+    y3 = result['temp']
+    x = result["time"]
     fig = Figure(figsize=(10, 8))
     axis = fig.add_subplot(1, 1, 1)
-    axis.set_title("Temperature [°C]")
-    axis.set_xlabel("Datum van de meeting")
-    axis.set_ylabel("Temperatuur in Celcius")
+    axis.set_title("Temperatuur [°C] and Luchtvochtigheid (R%)")
+    axis.set_xlabel("Datum en tijd van de meeting")
+    axis.set_ylabel("Temperatuur en luchtvochtigheid")
     axis.grid(True)
-    axis.set_ylim([10, 40])
-    axis.set_xlim([dt.date(2023, month, 1), dt.date(2023, month, tomorrow)])
-    axis.plot(x, y)
-    axis.tick_params(axis="x", rotation=30)
+    axis.set_ylim([0, 80])
+    axis.set_xlim([dt.date(2023, month, today - 3), dt.date(2023, month, today + 3)])
+    axis.plot(x, y1, color='blue')
+    axis.plot(x, y2, color='orange')
+    axis.plot(x, y3, color='grey')
+    axis.tick_params(axis="x", rotation=30, labelsize=16)
     canvas = FigureCanvas(fig)
     output = io.BytesIO()
     canvas.print_png(output)
@@ -65,24 +83,31 @@ def plot_temp():
 @app.route("/hum")
 def plot_hum():
     df, last_row = sql_extract_sensor_dataframe()
-    df["time"] = pd.to_datetime(df["timestamp"])
+    dfknmi = sql_extract_knmi_dataframe()
+    result = create_results_dataframe(df, dfknmi)    
+    result["time"] = pd.to_datetime(result["timestamp"])
     today = pd.Timestamp.today().day
     month = pd.Timestamp.today().month
     tomorrow = today + 1
-    x = df["time"]
-    y = df["hum_house"]
+    x = result["time"]
+    y1 = result["temp_house"]
+    y2 = result['temp']
     fig = Figure(figsize=(10, 8))
     axis = fig.add_subplot(1, 1, 1)
-    axis.set_title("Humidity [%]")
-    axis.set_xlabel("Datum van de meeting")
-    axis.set_ylabel("Luchtvochtigheid")
+    axis.set_title("Temperatuur [°C]")
+    axis.set_xlabel("Tijdstip van de meeting")
+    axis.set_ylabel("Temperatuur")
     axis.grid(True)
-    axis.set_ylim([20, 90])
-    axis.set_xlim([dt.date(2023, month, 1), dt.date(2023, month, tomorrow)])
-    axis.plot(x, y)
-    axis.tick_params(axis="x", rotation=30)
+    xformatter = mdates.DateFormatter('%H:%M')
+    axis.xaxis.set_major_formatter(xformatter)    
+    axis.axhline(19, color='red')
+    axis.set_ylim([0, 25])
+    axis.set_xlim([dt.date(2023, month, today), dt.date(2023, month, tomorrow)])
+    axis.plot(x, y1, color='blue')
+    axis.plot(x, y2, color='gray')
+    axis.tick_params(axis="x", rotation=30, labelsize=16)
     canvas = FigureCanvas(fig)
-    output = io.BytesIO()
+    output = io.BytesIO()   
     canvas.print_png(output)
     response = make_response(output.getvalue())
     response.mimetype = "image/png"

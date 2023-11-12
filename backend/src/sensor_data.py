@@ -4,6 +4,7 @@ from datetime import datetime
 import board
 import adafruit_dht
 
+
 def get_sensor_data():
     dhtDevice = adafruit_dht.DHT22(board.D4)
     pi_temperature = round(CPUTemperature().temperature, 2)

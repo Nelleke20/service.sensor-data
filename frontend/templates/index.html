@@ -1,18 +1,33 @@
 <!DOCTYPE html>
-   <head>
+<head>
       <title> Raspberry Pi - Sensor data </title>
       <link rel="stylesheet" href='../static/style.css'/>
 </head>
    <body>
 	<center>
-	<h1> Raspberry Pi - Sensor data </h1>
+	<h1> BWO 18 - Temperatuur en Luchtvochtigheid (rel.) meter</h1>
 	</center>
-	<h3> TEMPERATURE   ==>  {{ temp_home  }} oC</h3>
-	<h3> HUMIDITY (Rel.) ==>  {{ lucht_home  }} %</h3>
 	<hr>
-	<h3> Last Sensors Reading: {{ timestamp }} ==> <a href="/"class="button">REFRESH</a></h3>
+	<center>
+	<img src="/static/thermostat.jpeg" class="inline" width="70%"/>		
+	</center>
+	<hr>	  	
+	<p style="font-size:14px"> Huidige temperatuur   ==>  {{ temp_home  }} oC </p>
+	<p style="font-size:14px"> Huidige Luchtvochtigheid (Rel.) ==>  {{ lucht_home  }} %</p>
 	<hr>
-	<img src="/temp" alt="Image Placeholder" width="49%">
-	<img src="/hum" alt="Image Placeholder" width="49%">
+	<p style="font-size:14px"> Laatste meetmoment: {{ timestamp }} ==> <a href="/"class="button">REFRESH</a></p>
+	<hr>
+	<div id="Algeem">
+		<center>
+		<h3 style="font-size:25px"> Weekbeeld van temperatuur (blauw) en Luchtvochtigheid (oranje):</h3>
+		<img src="/temp" class="inline" alt='Image of temperatur en Luchtvochtigheid' width="75%"/>		
+		</center>
+	</div>
+	<div id="Detail">
+		<center>
+		<h3 style="font-size:25px"> 24-uursbeeld van temperatuurverloop: </h3>
+		<img src="/hum" alt="Image of temperature", class="inline" width="75%"/>	
+		</center>
+	</div>
    </body>
 </html>
