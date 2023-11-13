@@ -17,7 +17,7 @@ Jan 3, 2022 frontend (old repository)
 We have some discussions at home about the temperature and humidity in house. To end the discussion ones and for all (😉) I decided to built my own sensor-pi combination and  store the data in database. Storing the history enabled me to retrieve the data and show a trendline over the past days on a webpage:
 
 <p align="center" width="100%">
-    <img width="75%" height="50" src="img/screenshotwebpage.jpg">
+    <img width="20%" height="50" src="img/screenshotwebpage.jpg">
 </p>
 
 #### Tech and Tools
