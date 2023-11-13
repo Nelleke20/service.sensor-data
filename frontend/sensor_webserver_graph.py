@@ -91,7 +91,6 @@ def plot_hum():
     tomorrow = today + 1
     x = result["time"]
     y1 = result["temp_house"]
-    y2 = result['temp']
     fig = Figure(figsize=(10, 8))
     axis = fig.add_subplot(1, 1, 1)
     axis.set_title("Temperatuur [°C]")
@@ -101,10 +100,9 @@ def plot_hum():
     xformatter = mdates.DateFormatter('%H:%M')
     axis.xaxis.set_major_formatter(xformatter)    
     axis.axhline(19, color='red')
-    axis.set_ylim([0, 25])
+    axis.set_ylim([15, 25])
     axis.set_xlim([dt.date(2023, month, today), dt.date(2023, month, tomorrow)])
     axis.plot(x, y1, color='blue')
-    axis.plot(x, y2, color='gray')
     axis.tick_params(axis="x", rotation=30, labelsize=16)
     canvas = FigureCanvas(fig)
     output = io.BytesIO()   
