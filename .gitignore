@@ -26,3 +26,6 @@ venv
 
 # data folder
 data
+
+# notebook wip
+backend/*.ipynb
